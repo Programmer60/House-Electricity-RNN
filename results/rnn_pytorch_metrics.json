@@ -1,0 +1,118 @@
+{
+  "model": "PyTorch Vanilla RNN",
+  "configuration": {
+    "input_size": 7,
+    "hidden_units": 32,
+    "timesteps": 24,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "max_epochs": 30,
+    "patience": 5,
+    "seed": 42,
+    "validation_fraction": 0.1,
+    "shuffle": false
+  },
+  "split": {
+    "train_samples": 24882,
+    "validation_samples": 2765,
+    "test_samples": 6894,
+    "split_index": 24882,
+    "description": "first 90% of training period for training; final 10% for validation"
+  },
+  "epochs_trained": 16,
+  "best_epoch": 11,
+  "best_validation_loss": 0.009299717721938548,
+  "history": {
+    "training_loss": [
+      0.012489594679917056,
+      0.00944217300087725,
+      0.008830834654049876,
+      0.008610151744432751,
+      0.008540939613519486,
+      0.008505370391058321,
+      0.008481585476251037,
+      0.00845977692975552,
+      0.00843413030527626,
+      0.008400959457782015,
+      0.008354188795537223,
+      0.008268703186291488,
+      0.008201444589368745,
+      0.008165355551637995,
+      0.008138291037403189,
+      0.00811587059277478
+    ],
+    "validation_loss": [
+      0.011057905002478611,
+      0.009868290778805265,
+      0.009682310636493817,
+      0.009501986888912633,
+      0.009430753456927149,
+      0.009414542444508395,
+      0.009408161884500471,
+      0.0094000795009002,
+      0.009391609477856033,
+      0.009384222018362358,
+      0.009299717721938548,
+      0.009414844969405404,
+      0.009494376463047608,
+      0.009503583105998433,
+      0.009492940242548775,
+      0.009473240556478312
+    ]
+  },
+  "test_metrics": {
+    "MAE_kW": 0.39160448537618875,
+    "MSE_kW2": 0.2681781039260947,
+    "RMSE_kW": 0.5178591545257211,
+    "R2": 0.49392372906280413
+  },
+  "prediction_distribution": {
+    "minimum_kW": 0.08605318516492844,
+    "maximum_kW": 3.9660885334014893,
+    "mean_kW": 1.0682018995285034,
+    "actual_minimum_kW": 0.16043756970519246,
+    "actual_maximum_kW": 5.626833048354187,
+    "actual_mean_kW": 1.0024556164350382
+  },
+  "runtime_seconds": 28.243953000055626,
+  "comparison": {
+    "NumPy RNN, 2 epochs": {
+      "epochs": 2,
+      "optimizer": "SGD",
+      "MAE_kW": 0.6990698654638405,
+      "RMSE_kW": 0.8104661470077155,
+      "R2": -0.23954533977216674
+    },
+    "NumPy RNN, 20 epochs": {
+      "epochs": 20,
+      "optimizer": "SGD",
+      "MAE_kW": 0.48833550664240327,
+      "RMSE_kW": 0.598478526854811,
+      "R2": 0.32408854920283514
+    },
+    "PyTorch RNN": {
+      "epochs": 11,
+      "optimizer": "Adam",
+      "MAE_kW": 0.39160448537618875,
+      "MSE_kW2": 0.2681781039260947,
+      "RMSE_kW": 0.5178591545257211,
+      "R2": 0.49392372906280413
+    }
+  },
+  "numerical_issues": {
+    "predictions_finite": true,
+    "training_history_finite": true
+  },
+  "artifacts": {
+    "model": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\models\\rnn_pytorch_best.pt",
+    "metrics": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_metrics.json",
+    "config": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_config.json",
+    "predictions": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_predictions.csv",
+    "loss_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_loss.png",
+    "actual_vs_predicted_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_actual_vs_predicted.png",
+    "error_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_error.png",
+    "comparison": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_comparison.md",
+    "report": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_pytorch_report.md"
+  }
+}

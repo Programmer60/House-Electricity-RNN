@@ -1,0 +1,81 @@
+{
+  "experiment": "Step 6 longer SGD training",
+  "configuration": {
+    "hidden_units": 32,
+    "timesteps": 24,
+    "features": 7,
+    "optimizer": "SGD",
+    "learning_rate": 0.001,
+    "epochs": 20,
+    "random_seed": 42,
+    "shuffle": false
+  },
+  "experiment_20_epochs": {
+    "history": [
+      0.010132584773933551,
+      0.009459894978094045,
+      0.008667078631058058,
+      0.007183953824020283,
+      0.006131088595135709,
+      0.0057194692775190134,
+      0.005481978610800688,
+      0.005307970019134215,
+      0.00518060161059442,
+      0.005089203474010753,
+      0.005023356087630111,
+      0.004974315893216446,
+      0.004935849455884889,
+      0.0049040146489609335,
+      0.0048765011764600585,
+      0.004852003174897645,
+      0.004829782244581146,
+      0.004809406893907926,
+      0.004790609767011446,
+      0.004773212558212523
+    ],
+    "final_train_loss": 0.004773212558212523,
+    "runtime_seconds": 349.2230472000083,
+    "metrics": {
+      "MAE_kW": 0.48833550664240327,
+      "MSE_kW2": 0.35817654710630464,
+      "RMSE_kW": 0.598478526854811,
+      "R2": 0.32408854920283514
+    },
+    "distribution": {
+      "prediction_minimum_kW": 0.5287337678858481,
+      "prediction_maximum_kW": 4.5807382128112195,
+      "prediction_mean_kW": 1.2628535436292319,
+      "actual_minimum_kW": 0.16043756970519246,
+      "actual_maximum_kW": 5.626833048354187,
+      "actual_mean_kW": 1.0024556164350382
+    },
+    "scaled_prediction_range": [
+      0.06288071045170562,
+      0.6924128584148048
+    ]
+  },
+  "comparison": {
+    "2_epochs": {
+      "final_train_loss": 0.009459894978094045,
+      "MAE_kW": 0.6990698654638405,
+      "MSE_kW2": 0.6568553754455319,
+      "RMSE_kW": 0.8104661470077155,
+      "R2": -0.23954533977216674
+    },
+    "20_epochs": {
+      "final_train_loss": 0.004773212558212523,
+      "MAE_kW": 0.48833550664240327,
+      "MSE_kW2": 0.35817654710630464,
+      "RMSE_kW": 0.598478526854811,
+      "R2": 0.32408854920283514
+    }
+  },
+  "artifacts": {
+    "model": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_numpy_model_20_epochs.npz",
+    "predictions": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_test_predictions_20_epochs.npy",
+    "training_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_20_epoch_training_loss.png",
+    "actual_vs_predicted_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_20_epoch_actual_vs_predicted.png",
+    "error_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_20_epoch_prediction_error.png",
+    "comparison_table": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_step6_comparison.md"
+  }
+}

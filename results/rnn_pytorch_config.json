@@ -1,0 +1,13 @@
+{
+  "input_size": 7,
+  "hidden_units": 32,
+  "timesteps": 24,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "max_epochs": 30,
+  "patience": 5,
+  "seed": 42,
+  "validation_fraction": 0.1,
+  "shuffle": false
+}

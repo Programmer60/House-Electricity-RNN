@@ -1,0 +1,58 @@
+{
+  "model": "NumPy Vanilla RNN",
+  "hidden_units": 32,
+  "timesteps": 24,
+  "features": 7,
+  "optimizer": "SGD",
+  "learning_rate": 0.001,
+  "epochs": 2,
+  "random_seed": 42,
+  "test_shape": {
+    "X_test": [
+      6894,
+      24,
+      7
+    ],
+    "y_test": [
+      6894
+    ]
+  },
+  "scaled_prediction_summary": {
+    "minimum": 0.1912125152556588,
+    "maximum": 0.22419434236873162,
+    "mean": 0.198798802879113,
+    "target_minimum": 0.00566105537021133,
+    "target_maximum": 0.8549374404441314,
+    "target_mean": 0.13647962597799748,
+    "finite": true
+  },
+  "target_scaling": {
+    "source": "preprocessing/preprocessing_metadata.rds",
+    "target": "Global_active_power",
+    "minimum_kW": 0.124,
+    "maximum_kW": 6.560533,
+    "inverse_transform_verified": true
+  },
+  "original_scale_summary": {
+    "prediction_minimum_kW": 1.3547456644560514,
+    "prediction_maximum_kW": 1.5670342830696393,
+    "prediction_mean_kW": 1.403575055091906,
+    "actual_minimum_kW": 0.16043756970519246,
+    "actual_maximum_kW": 5.626833048354187,
+    "actual_mean_kW": 1.0024556164350382
+  },
+  "metrics": {
+    "MAE_kW": 0.6990698654638405,
+    "MSE_kW2": 0.6568553754455319,
+    "RMSE_kW": 0.8104661470077155,
+    "R2": -0.23954533977216674
+  },
+  "artifacts": {
+    "predictions": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_test_predictions.npy",
+    "metrics": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_test_metrics.json",
+    "actual_vs_predicted_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_actual_vs_predicted.png",
+    "error_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_prediction_error.png",
+    "predictions_csv": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_test_predictions.csv",
+    "report": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_baseline_evaluation.md"
+  }
+}

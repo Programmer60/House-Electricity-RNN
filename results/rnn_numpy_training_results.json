@@ -543,7 +543,7 @@
     ]
   },
   "full_training": {
-    "runtime_seconds": 33.149487400078215,
+    "runtime_seconds": 38.78101620008238,
     "initial_loss": 0.010132584773933551,
     "final_loss": 0.009459894978094045,
     "history": [

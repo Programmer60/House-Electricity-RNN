@@ -1,0 +1,100 @@
+{
+  "model": "TensorFlow/Keras Vanilla RNN",
+  "configuration": {
+    "input_size": 7,
+    "hidden_units": 32,
+    "timesteps": 24,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "max_epochs": 30,
+    "patience": 5,
+    "seed": 42,
+    "validation_fraction": 0.1,
+    "shuffle": false
+  },
+  "split": {
+    "train_samples": 24882,
+    "validation_samples": 2765,
+    "test_samples": 6894,
+    "split_index": 24882
+  },
+  "epochs_trained": 11,
+  "best_epoch": 6,
+  "best_validation_loss": 0.009035887196660042,
+  "history": {
+    "training_loss": [
+      0.014514920301735401,
+      0.009344161488115788,
+      0.008750349283218384,
+      0.008459226228296757,
+      0.008290532976388931,
+      0.008197451010346413,
+      0.008148014545440674,
+      0.008117353543639183,
+      0.008063534274697304,
+      0.008003168739378452,
+      0.007954872213304043
+    ],
+    "validation_loss": [
+      0.010412159375846386,
+      0.009536701254546642,
+      0.009341844357550144,
+      0.009185688570141792,
+      0.009074229747056961,
+      0.009035887196660042,
+      0.009169841185212135,
+      0.009506531059741974,
+      0.00968747865408659,
+      0.009683208540081978,
+      0.009607318788766861
+    ]
+  },
+  "test_metrics": {
+    "MAE_kW": 0.3975968330814261,
+    "MSE_kW2": 0.27095818276753864,
+    "RMSE_kW": 0.5205364375022546,
+    "R2": 0.4886774695345577
+  },
+  "prediction_distribution": {
+    "minimum_kW": 0.024923279881477356,
+    "maximum_kW": 3.7105042934417725,
+    "mean_kW": 1.0890791416168213
+  },
+  "runtime_seconds": 10.438993099989602,
+  "comparison": {
+    "NumPy RNN": {
+      "optimizer": "SGD",
+      "MAE_kW": 0.6990698654638405,
+      "MSE_kW2": 0.6568553754455319,
+      "RMSE_kW": 0.8104661470077155,
+      "R2": -0.23954533977216674
+    },
+    "PyTorch RNN": {
+      "epochs": 11,
+      "optimizer": "Adam",
+      "MAE_kW": 0.39160448537618875,
+      "MSE_kW2": 0.2681781039260947,
+      "RMSE_kW": 0.5178591545257211,
+      "R2": 0.49392372906280413
+    },
+    "TensorFlow/Keras RNN": {
+      "epochs": 6,
+      "optimizer": "Adam",
+      "MAE_kW": 0.3975968330814261,
+      "MSE_kW2": 0.27095818276753864,
+      "RMSE_kW": 0.5205364375022546,
+      "R2": 0.4886774695345577
+    }
+  },
+  "artifacts": {
+    "model": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\models\\rnn_tensorflow_best.keras",
+    "metrics": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_metrics.json",
+    "config": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_config.json",
+    "predictions": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_predictions.csv",
+    "loss_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_loss.png",
+    "actual_vs_predicted_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_actual_vs_predicted.png",
+    "error_plot": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_error.png",
+    "comparison": "C:\\Users\\mishr\\Desktop\\household-electricity-rnn\\results\\rnn_tensorflow_comparison.md"
+  }
+}

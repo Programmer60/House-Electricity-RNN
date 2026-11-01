@@ -35,3 +35,23 @@ The locked PyTorch baseline used chronological validation, patience 5, seed 42, 
 - R2: `0.49392373`
 
 The checkpoint is `models/rnn_pytorch_best.pt`.
+
+## TensorFlow/Keras practical implementation
+
+`models/rnn/rnn_tensorflow.py` provides the equivalent Keras implementation
+using `tf.keras.layers.SimpleRNN(32)` followed by `Dense(1)`. It preserves the
+same 24-hour, 7-feature input contract, chronological validation split,
+no-shuffle training, Adam optimizer, early stopping, inverse scaling, and
+test metrics as the PyTorch baseline.
+
+TensorFlow/Keras is the recommended practical implementation here because it
+provides a concise high-level training API while retaining the same RNN
+architecture. Install TensorFlow before running it:
+
+```text
+python -m pip install tensorflow
+python models/rnn/rnn_tensorflow.py
+```
+
+The Keras checkpoint and prediction artifacts use the `rnn_tensorflow_*`
+prefix under `models/` and `results/`.

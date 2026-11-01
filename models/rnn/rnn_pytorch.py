@@ -40,9 +40,9 @@ class PyTorchVanillaRNN(nn.Module):
             batch_first=True,
             nonlinearity="tanh",
         )
-        self.linear = nn.Linear(hidden_size, 1)
+        self.linear = nn.Linear(hidden_size, 1)     # Many-to-one output for next-hour prediction
 
-    def forward(self, sequence: torch.Tensor) -> torch.Tensor:
+    def forward(self, sequence: torch.Tensor) -> torch.Tensor:   # Forward pass through the RNN and linear layer
         hidden_sequence, _ = self.rnn(sequence)
         final_hidden = hidden_sequence[:, -1, :]
         return self.linear(final_hidden)
@@ -52,7 +52,7 @@ def set_reproducible_seed(seed: int) -> None:
     """Set Python, NumPy, and PyTorch random seeds."""
     random.seed(seed)
     np.random.seed(seed)
-    torch.manual_seed(seed)
+    torch.manual_seed(seed)     # Set the seed for CPU and GPU (if available) operations
 
 
 def make_loader(
@@ -335,7 +335,7 @@ def train_and_evaluate(
 
     model = PyTorchVanillaRNN(input_size=7, hidden_size=32)
     criterion = nn.MSELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)  # Adam is a practical choice for optimization, not a mathematical requirement of the RNN
     history = {"training_loss": [], "validation_loss": []}
     best_validation_loss = float("inf")
     best_epoch = 0

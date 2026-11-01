@@ -12,6 +12,7 @@ Raw minute-level data
   -> chronological sequence generation
   -> NumPy mathematical RNN
   -> PyTorch practical RNN
+  -> TensorFlow/Keras practical RNN
   -> evaluation and controlled experiments
 ```
 
@@ -33,6 +34,7 @@ The target is `Global_active_power`, reported in kW. Preprocessing remains in R;
 - NumPy reference: `models/rnn/rnn_numpy.py`
 - NumPy training: `models/rnn/train_numpy.py`
 - PyTorch baseline: `models/rnn/rnn_pytorch.py`
+- TensorFlow/Keras baseline: `models/rnn/rnn_tensorflow.py`
 - R-generated sequence lengths: `preprocessing/generate_sequence_lengths.R`
 
 ## Locked RNN result

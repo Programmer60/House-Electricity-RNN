@@ -8,6 +8,25 @@ Raw minute readings are cleaned and aggregated in R. The resulting hourly data i
 
 Each input `x_t` updates the hidden state using the tanh recurrence. After the final input hour, the linear output layer maps `h_T` to the next-hour prediction `y_hat`.
 
+## Show the mathematics with a small example
+
+Use `models/rnn/rnn_math_example.py` before the presentation. It creates a
+three-timestep visualization with two hidden units, which is much easier to
+explain than the production shape `(24, 7)` and 32 hidden units.
+
+Suggested explanation:
+
+1. Start with `h_0 = [0, 0]`.
+2. Feed `x_1 = 0.2`; calculate `a_1`, then apply `tanh` to obtain `h_1`.
+3. Feed `x_2` and `x_3`; the previous hidden state is carried forward each time.
+4. Use only `h_3` in the output equation to calculate `y_hat`.
+5. Compare `y_hat` with `y = 0.8` using the half-squared loss.
+6. Explain that BPTT sends the output error backward through `h_3`, `h_2`,
+   and `h_1`, while accumulating gradients for the shared `W_hh`.
+
+The generated figure is `results/rnn_math_example.png`. The exact numerical
+values and equations are documented in `docs/03_RNN_MATHEMATICS.md`.
+
 ## Explain BPTT
 
 The RNN is unrolled through time. Since the same recurrent matrix is reused, its gradient accumulates contributions from every timestep. The chain rule sends gradients backward through the recurrent Jacobians.

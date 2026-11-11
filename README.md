@@ -26,6 +26,7 @@ The target is `Global_active_power`, reported in kW. Preprocessing remains in R;
 - [BPTT and gradient analysis](docs/04_BPTT_AND_GRADIENT_ANALYSIS.md)
 - [RNN implementation](docs/05_RNN_IMPLEMENTATION.md)
 - [Experiments and results](docs/06_EXPERIMENTS_AND_RESULTS.md)
+- [Final project report](results/final_project_report.md)
 - [RNN versus LSTM](docs/07_RNN_VS_LSTM.md)
 - [Viva and presentation notes](docs/08_VIVA_AND_PRESENTATION.md)
 
@@ -35,6 +36,7 @@ The target is `Global_active_power`, reported in kW. Preprocessing remains in R;
 - NumPy training: `models/rnn/train_numpy.py`
 - PyTorch baseline: `models/rnn/rnn_pytorch.py`
 - TensorFlow/Keras baseline: `models/rnn/rnn_tensorflow.py`
+- Real-model architecture and example visualizations: `models/rnn/visualize_tensorflow_examples.py`
 - R-generated sequence lengths: `preprocessing/generate_sequence_lengths.R`
 
 ## Locked RNN result

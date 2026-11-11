@@ -1,0 +1,4 @@
+case,test_sample_index,actual_kW,predicted_kW,error_actual_minus_predicted_kW
+Low demand (15th percentile),526,0.3309333226167295,0.615947,-0.2850136855162051
+Typical demand (50th percentile),1,0.7733666330374528,1.0021522,-0.22878557147609702
+High demand (98th percentile),5212,2.8731331909620095,2.0360737,0.8370595062696267

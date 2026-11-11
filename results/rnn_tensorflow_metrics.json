@@ -61,7 +61,7 @@
     "maximum_kW": 3.7105042934417725,
     "mean_kW": 1.0890791416168213
   },
-  "runtime_seconds": 10.438993099989602,
+  "runtime_seconds": 18.837666999999783,
   "comparison": {
     "NumPy RNN": {
       "optimizer": "SGD",

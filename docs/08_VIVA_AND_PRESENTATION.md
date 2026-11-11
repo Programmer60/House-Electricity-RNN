@@ -27,6 +27,32 @@ Suggested explanation:
 The generated figure is `results/rnn_math_example.png`. The exact numerical
 values and equations are documented in `docs/03_RNN_MATHEMATICS.md`.
 
+## Show the trained model on real examples
+
+Run `models/rnn/visualize_tensorflow_examples.py` to load the saved
+TensorFlow/Keras model and select three actual held-out test sequences around
+the 15th, 50th, and 98th percentiles of next-hour demand. It generates:
+
+- `results/rnn_tensorflow_architecture.png`: input, recurrent layer, Dense
+  output, parameter counts, and the repeated hidden-state connection.
+- `results/rnn_tensorflow_real_input_features.png`: the seven actual
+  training-scaled features over the 24-hour input window.
+- `results/rnn_tensorflow_real_examples.png`: 24-hour power history, actual
+  versus predicted next hour, and all 32 recurrent hidden activations over
+  time for each case.
+- `results/rnn_tensorflow_real_examples.md` and `.csv`: measured example
+  outputs and a short presentation guide.
+
+The hidden-state plots are internal learned activations; they should not be
+described as appliance identities or causal explanations. The model
+predictions are calculated from the saved checkpoint and test data, not
+hand-selected or fabricated examples.
+
+Suggested explanation: “At each of the 24 input hours, the same SimpleRNN
+cell combines seven measurements with the previous 32-value hidden state.
+After the final hour, a Dense layer maps the final hidden state to the next
+hour's scaled power prediction, which we convert back to kW.”
+
 ## Explain BPTT
 
 The RNN is unrolled through time. Since the same recurrent matrix is reused, its gradient accumulates contributions from every timestep. The chain rule sends gradients backward through the recurrent Jacobians.

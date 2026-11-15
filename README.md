@@ -24,15 +24,13 @@ Consumption data. R preprocessing requires `data.table`, `lubridate`, `zoo`,
 
 ## Documentation
 
-- [Project overview](docs/01_PROJECT_OVERVIEW.md)
-- [Data preprocessing](docs/02_DATA_PREPROCESSING.md)
-- [RNN mathematics](docs/03_RNN_MATHEMATICS.md)
-- [BPTT and gradient analysis](docs/04_BPTT_AND_GRADIENT_ANALYSIS.md)
-- [RNN implementation](docs/05_RNN_IMPLEMENTATION.md)
-- [Experiments and results](docs/06_EXPERIMENTS_AND_RESULTS.md)
+- [Data preprocessing](docs/01_DATA_PREPROCESSING.md)
+- [RNN mathematics](docs/02_RNN_MATHEMATICS.md)
+- [BPTT and gradient analysis](docs/03_BPTT_AND_GRADIENT_ANALYSIS.md)
+- [RNN implementation](docs/04_RNN_IMPLEMENTATION.md)
+- [Experiments and results](docs/05_EXPERIMENTS_AND_RESULTS.md)
 - [Final project report](results/final_project_report.md)
-- [RNN versus LSTM](docs/07_RNN_VS_LSTM.md)
-- [Viva and presentation notes](docs/08_VIVA_AND_PRESENTATION.md)
+- [Reproducibility](docs/06_REPRODUCIBILITY.md)
 
 ## Main implementations
 

@@ -51,13 +51,5 @@ Delimiter is `;`, missing readings are coded as `?`.
    parameters, so preprocessing and RNN training are cleanly
    separated steps.
 
-## Talking points for the professor
-- Why interpolation over deletion: deleting ~26k rows would break
-  time continuity, which sequence models depend on.
-- Why hourly aggregation: makes training tractable in a lab
-  session while preserving the seasonal structure RNNs exploit.
-- Why scale on train-only stats: prevents test-set leakage, a
-  common pitfall specifically for time series problems.
-- Why the specific 3D array shape: it's a hard requirement of
-  `keras`'s `layer_simple_rnn`/`layer_lstm`/`layer_gru`.
+
   

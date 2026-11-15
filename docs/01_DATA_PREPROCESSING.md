@@ -2,7 +2,12 @@
 
 ## R-only preprocessing
 
-The preprocessing pipeline is implemented in `preprocessing/Preprocessing.R`. Python does not redo cleaning, resampling, scaling, or sequence construction.
+The preprocessing pipeline is implemented in `preprocessing/Preprocessing.R`.
+Run it from the project root with
+`Rscript preprocessing/Preprocessing.R`. It locates the dataset and writes
+the RDS outputs relative to the project, rather than relying on a
+machine-specific absolute path. Python does not redo cleaning, resampling,
+scaling, or sequence construction.
 
 The raw file uses semicolon-separated columns and `?` for missing values. R merges `Date` and `Time`, sorts chronologically, interpolates missing numeric readings, fills boundary gaps, and aggregates minute readings into hourly means.
 

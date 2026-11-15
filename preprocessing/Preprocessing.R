@@ -21,12 +21,23 @@ library(ggplot2)
 
 set.seed(42)  # reproducibility
 
+script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+if (length(script_arg) == 0) {
+  stop("Run this script with Rscript preprocessing/Preprocessing.R from the project.")
+}
+script_path <- normalizePath(sub("^--file=", "", script_arg[[1]]))
+preprocessing_dir <- dirname(script_path)
+project_root <- dirname(preprocessing_dir)
  
 ## 1. LOAD RAW DATA
 
 
 raw <- fread(
-  "C:/Users/mishr/Desktop/R/individual+household+electric+power+consumption/household_power_consumption.txt",
+  file.path(
+    project_root,
+    "individual+household+electric+power+consumption",
+    "household_power_consumption.txt"
+  ),
   sep       = ";",
   na.strings = "?",
   header    = TRUE,
@@ -178,7 +189,7 @@ test_scaled  <- minmax_scale(test_raw,  mins, maxs, feature_cols)
 
 # Save the scaling parameters - you'll need the SAME mins/maxs
 # to un-scale (invert) predictions back to real kWh units later.
-saveRDS(list(mins = mins, maxs = maxs), "scaling_params.rds")
+saveRDS(list(mins = mins, maxs = maxs), file.path(preprocessing_dir, "scaling_params.rds"))
 
 
  
@@ -234,11 +245,11 @@ cat("Test  X shape: (", paste(dim(test_seq$X), collapse = ", "), ")\n")
 # Save everything the training script will need, 
 # preprocessing and model-training can be two separate,
 
-saveRDS(train_seq, "train_sequences.rds")
-saveRDS(test_seq,  "test_sequences.rds")
+saveRDS(train_seq, file.path(preprocessing_dir, "train_sequences.rds"))
+saveRDS(test_seq, file.path(preprocessing_dir, "test_sequences.rds"))
 saveRDS(list(mins = mins, maxs = maxs, timesteps = timesteps,
              feature_cols = feature_cols, target_col = target_col),
-        "preprocessing_metadata.rds")
+        file.path(preprocessing_dir, "preprocessing_metadata.rds"))
 
 cat("\nPreprocessing complete.\n")
 cat("Files written: train_sequences.rds, test_sequences.rds,\n")

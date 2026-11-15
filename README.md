@@ -18,6 +18,10 @@ Raw minute-level data
 
 The target is `Global_active_power`, reported in kW. Preprocessing remains in R; Python is used for the RNN implementations.
 
+The included source dataset is the UCI Individual Household Electric Power
+Consumption data. R preprocessing requires `data.table`, `lubridate`, `zoo`,
+`dplyr`, and `ggplot2`. Python requirements are listed in `requirements.txt`.
+
 ## Documentation
 
 - [Project overview](docs/01_PROJECT_OVERVIEW.md)
@@ -38,6 +42,32 @@ The target is `Global_active_power`, reported in kW. Preprocessing remains in R;
 - TensorFlow/Keras baseline: `models/rnn/rnn_tensorflow.py`
 - Real-model architecture and example visualizations: `models/rnn/visualize_tensorflow_examples.py`
 - R-generated sequence lengths: `preprocessing/generate_sequence_lengths.R`
+
+## Run the project
+
+Use Python 3.13 or a compatible Python version and install the listed
+packages:
+
+```text
+python -m pip install -r requirements.txt
+```
+
+Install R and the packages listed at the top of
+`preprocessing/Preprocessing.R` if you need to regenerate the prepared RDS
+files. From the project root, run:
+
+```text
+Rscript preprocessing/Preprocessing.R
+python models/rnn/rnn_pytorch.py
+python models/rnn/rnn_tensorflow.py
+python models/rnn/rnn_math_example.py
+python models/rnn/visualize_tensorflow_examples.py
+```
+
+The preprocessing script writes its RDS outputs to `preprocessing/`, and the
+Python runners write model artifacts and reports to `models/` and `results/`.
+The included RDS files and trained checkpoints mean the project can also be
+reviewed without rerunning training.
 
 ## Locked RNN result
 
